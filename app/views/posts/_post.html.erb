@@ -1,0 +1,6 @@
+<li>
+  <% if logged_in? %>
+    <span><%= post.user.email %>:</span>
+  <% end %>
+  <%= post.content%>
+</li>

@@ -2,12 +2,6 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
-  get 'users/new'
-
-  get 'users/edit'
-
-  get 'users/show'
-
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
 
@@ -15,5 +9,9 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  resources :users
+  resources :users, except: [:edit]
+  resources :sessions
+  resources :posts, only: [:new, :create, :index]
+
+  get "*path", to: redirect('/')
 end

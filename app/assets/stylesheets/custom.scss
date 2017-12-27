@@ -109,6 +109,13 @@ footer {
   }
 }
 
+.secrets li{
+  list-style: none;
+  span{
+  font-weight: bold;
+  }
+}
+
 /* miscellaneous */
 
 .debug_dump {
